@@ -13,7 +13,6 @@ console.time("6")
 find(12)
 console.timeEnd("6")
 
-
 //after optimisation using closures
 
 function find(){
