@@ -1,0 +1,10 @@
+Currying is a function that takes one argument at a time and returns the new function expecting the next argument.
+
+MAkes function callable from a(1,2) to a(1)(2)
+
+Currying functions are constructed by chaining closures by immediatly returning their inner functions immediatly.
+
+Ques - Why do we use currying?
+Ans - to avoid passing same variable again and again
+    - to create higher order functions
+    - to make your function pure and less prone to errors
