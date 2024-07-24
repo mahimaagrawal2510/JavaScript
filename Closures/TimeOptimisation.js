@@ -33,5 +33,5 @@ console.time("50");
 closure(50);
 console.timeEnd("50");
 
-//Explaination: we are running the loop in the first case every time we are running the code but in the second case when fing method is 
-//called, it will preserve the array due to closures and our loop time will be saved every time.
+// Explaination: we are running the loop in the first case every time we are running the code but in the second case when fing method is 
+// called, it will preserve the array due to closures and our loop time will be saved every time.
