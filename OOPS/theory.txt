@@ -1,0 +1,6 @@
+Implicit and explicit binding of objects in JS
+
+Implicit binding - when you invoke a funciton in an object using a dot notation, this keyword will point to the object using 
+which the function was invoked.
+
+Explicit binding - can be applied using call bind and apply

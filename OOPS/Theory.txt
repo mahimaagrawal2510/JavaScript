@@ -1,0 +1,46 @@
+There are many style to write a code like OOPs, functional, procedural programming.
+
+
+// javascript and classes
+- JS is primarily prototype based language and not object oriented not functional
+- Javascript has classes.
+- It did not exist before and technically it does not exis even now but classes in JS 
+  are just primarily syntactic sugar over existing prototype based inheritance mechanisms
+  as many developers are shifting from c++ or java and provides them a more familiar environment 
+  as class based languages.
+
+// OOPs
+- OOPs is a programming paradigm(style of writng code).
+- Object is a collection of properties and methods.
+- toLowerCase, reverse - these all are methods of objects
+- const person = new Object(); => p = {}
+//Constructor
+- 
+
+//Abstraction
+- It is used to keep only necessary information and display it to the users interacting with it 
+  and removing the unnecessary ones. There are two types of abstraction:
+  1. Data Abstraction
+//Encapsulation
+//inheritance
+//Polymorphism
+
+# Example of a person who wants to withdraw cash from ATM
+What happens is when a person wants to withdraw money from ATM, they just inserts the card, 
+enters the pin and take the cash but on backend there is whole lot process that goes on like the 
+bank will receive the request and firstly validate the pin and then if the info is correct it will 
+check the user's balance if the requested amount is in there then it will process the transaction. 
+This complete process takes place in the backend which user does not have to worry about. This is 
+where abstraction in OOPs comes where it does displays the info that is required for the user.
+
+- Role of ATM: verifyPIN(); dispenseCash();
+- Role of bank: validatePIN(); checkBalance(); processTransaction();
+- Role of customer: insertCard(); enterPIN(); requestCash()
+
+
+
+//Parts of OOPs
+- Constructor functions
+- Prototypes
+- Classes
+- Instances (new, this)
