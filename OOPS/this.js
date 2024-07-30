@@ -108,3 +108,32 @@ const user5 = {
 }
 user5.greet() //  Hello Mahima Agrawal
 user5.farewell() //Bye undefined
+
+//output based ques
+var length = 4;
+function cb(){
+    console.log(this.length, " length")
+};
+const obj = {
+    length:5, 
+    method(fn){
+        
+        fn()
+    }
+}
+obj.method(cb) // 4 length as method will point to object as this but fun will  not target the object as it will 
+//point to the window object
+
+//output based ques
+var length = 4;
+function cb1(){
+    console.log(this.length, " length")
+};
+const obj1 = {
+    length:5, 
+    method(){
+        
+        arguments[0]()
+    }
+}
+obj1.method(cb1,2,3)
