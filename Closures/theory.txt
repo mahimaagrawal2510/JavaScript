@@ -1,0 +1,7 @@
+Difference between closures and scope
+
+Closures : whenever you create a function within a function then the inner function is the closure and this 
+inner function is usually returned so that we can use outer functions variable at a later time.
+
+Scope : What variables you have access to. There are two types of scopes - global and local
+

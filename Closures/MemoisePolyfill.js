@@ -45,8 +45,6 @@ console.time("1");
 console.log(memoiseC(1,2)); 
 console.timeEnd("1");
 
-// 2 52ms
 console.time("3");
 console.log(memoiseC(1,2)) ;
 console.timeEnd("3");
-

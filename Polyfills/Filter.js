@@ -1,3 +1,5 @@
+
+
 let array = [2, 6, 41, 8, 34, 85];
 
 let newArr = array.filter(ele => {
@@ -7,7 +9,6 @@ let newArr = array.filter(ele => {
 console.log(newArr);
 
 // Filter polyfill
-
 Array.prototype.myFilter = function(cb){
     let temp = [];
     for(let i=0; i<this.length; i++){

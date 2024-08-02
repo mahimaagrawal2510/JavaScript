@@ -4,3 +4,15 @@ Ans - An Object is a collection of properties and a property is an association b
 
 Que - How json.stringify and parse are useful?
 Ans - When we have to store the data in local storage, we cannot simply store it in object format so we go and stringify it.
+ 
+Que - Shallow and deep copy of an object?
+Ans - Shallow copy : When we copy an object to another object and that other object has still the reference of the original 
+      object or of some its properties.
+      Deep copy : When we completly clone an object into an another variable and have no references to another object. 
+
+Que - How to make a deep copy of an object or clone?
+Ans - There are three ways:
+      const user = {name : "Mahima", age : 24};
+      const objClone = Object.assign({}, user) //first method
+      const objClone1 = JSON.parse(JSON.stringify(user)) //second method;
+      const objClone2 = {...user} //third method (destructring)

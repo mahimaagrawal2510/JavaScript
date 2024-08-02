@@ -1,0 +1,4 @@
+Prototypes are used to create polyfills
+
+var arr1 = [1,2,3,4];
+var arr2 = Array(1,2,3,4); //Array created by using "Array" constructor function and is predefined

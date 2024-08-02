@@ -8,3 +8,30 @@ Ques - Why do we use currying?
 Ans - to avoid passing same variable again and again
     - to create higher order functions
     - to make your function pure and less prone to errors
+
+
+
+Ques - Difference between currying and partial application
+Ans - When number of arguments passed and number of function return are equal is known as currying  and if no of arguments 
+is not equal to number of functions passed is known as partial application
+
+Ex: Sum(1)(2)(3)  //Currying
+function Sum(a){
+    return function(b){
+        return function(c){
+            console.log(a+b+c)
+        }
+    }
+}
+
+
+Sum(1)(3,4)
+
+function Sum(a){
+    return function(b,c){
+        console.log(a+b+c)
+    }
+}
+
+
+Note:  Real life example of using currying is for manipulating DOM.
