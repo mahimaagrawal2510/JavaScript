@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="flex flex-col gap-8 justify-center items-center h-screen">
+        <h3>Countdown timer</h3>
+        <div class="flex gap-4">
+            <div class="flex flex-col gap-4"><input type="text" id="hours" class="text-center w-16 h-16 border-2" value="0"></input>Hours</div><span> : </span>
+            <div class="flex flex-col gap-4"><input type="text" id="minutes" class="text-center w-16 h-16 border-2" value="0"></input>Minutes</div><span> : </span>
+            <div class="flex flex-col gap-4"><input type="text" id="seconds" class="text-center w-16 h-16 border-2" value="0"></input>Seconds</div>
+        </div>
+        <div class="flex gap-4">
+            <button class="bg-green-500 p-4 cursor-pointer" id="StartTimer">Start timer</button>
+            <button class="bg-red-500 p-4 cursor-pointer" id="ContinueTimer">Continue timer</button>
+            <button class="bg-orange-500 p-4 cursor-pointer" id="ResetTimer">Reset timer</button>
+            <button class="bg-blue-500 p-4 cursor-pointer" id="StopTimer">Stop timer</button>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function(){
+            document.getElementById("StartTimer").addEventListener("click", startGame);
+            document.getElementById("StopTimer").addEventListener("click", stopGame);
+            document.getElementById("ContinueTimer").addEventListener("click", continueGame);
+            document.getElementById("ResetTimer").addEventListener("click", resetGame);
+        })
+        let countdownTimer;
+        function startGame(){
+            console.log("started");
+            let hours = parseInt($("#hours").val())
+            let minutes =  parseInt($("#minutes").val())
+            let seconds =  parseInt($("#seconds").val())
+            if(seconds <0 || minutes < 0 || hours < 0) return;
+            
+            if(seconds > 60){
+                $("#seconds").val(seconds%60);
+               $("#minutes").val(minutes + parseInt(seconds/60))
+               minutes = minutes + parseInt(seconds/60);
+               seconds = seconds%60
+            }
+            if(minutes > 60){
+                $("#hours").val(hours + parseInt(minutes/60));
+                $("#minutes").val(parseInt(minutes%60))
+                hours = hours + parseInt(minutes/60);
+                minutes = minutes%60
+            }
+            
+            countdownTimer = setInterval(()=>{
+                
+                    startTimer()
+                }, 500)
+            
+           
+        }
+
+        function startTimer(){
+            let seconds = parseInt($("#seconds").val())
+            let minutes = parseInt($("#minutes").val())
+            let hours = parseInt($("#hours").val())
+            if(hours == 0 && minutes == 0 && seconds == 0) return
+            if(seconds > 0){
+                $("#seconds").val(--seconds)
+            }else if(seconds == 0 && minutes > 0){
+                $("#seconds").val("59")
+                $("#minutes").val(--minutes);
+            }
+            if(minutes == 0 && hours > 0){
+                $("#minutes").val("59");
+                $("#hours").val(--hours);
+            }
+            
+        }
+
+        function stopGame(){
+            clearInterval(countdownTimer)
+        }
+        function continueGame(){
+            startTimer()
+        }
+        function resetGame(){
+            
+        }
+    </script>
+   
+</body>
+</html>
